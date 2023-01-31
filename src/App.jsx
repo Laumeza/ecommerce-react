@@ -8,6 +8,7 @@ import Purchases from "./pages/Purchases";
 import AppNavBar from "./components/AppNavBar";
 import LoadingScreen from "./components/LoadingScreen";
 import { useSelector } from "react-redux";
+import { Container } from "react-bootstrap";
 
 function App() {
   const isLoading = useSelector((state) => state.isLoading);
@@ -16,12 +17,14 @@ function App() {
     <HashRouter>
       <AppNavBar />
       {isLoading && <LoadingScreen />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/purchases" element={<Purchases />} />
-      </Routes>
+      <Container className="my-5">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/purchases" element={<Purchases />} />
+        </Routes>
+      </Container>
     </HashRouter>
   );
 }
