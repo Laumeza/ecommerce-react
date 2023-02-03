@@ -27,13 +27,13 @@ const Purchases = () => {
               key={purchase.id}
               onClick={() => navigate(`/products/${purchase.product.id}`)}
             >
-              {purchase.product.title}
+              {purchase.product?.title}
             </Col>
             <Col xs={1} md={2}>
               {purchase.quantity}
             </Col>
             <Col xs={1} md={3}>
-              {purchase.product.price}
+              {purchase.product?.price}
             </Col>
           </>
         ))}
