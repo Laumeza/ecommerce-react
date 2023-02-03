@@ -29,8 +29,8 @@ const ProductDetail = () => {
 
   const addToCart = () => {
     const productToBuy = {
-      productId: product.id,
       quantity: quantity,
+      productId: product.id,
     };
     dispatch(addCartThunk(productToBuy));
   };

@@ -39,6 +39,7 @@ export const purchaseThunk = () => (dispatch) => {
   return axios
     .post(
       `https://e-commerce-api-v2.academlo.tech/api/v1/purchases`,
+      [],
       getConfig()
     )
     .then(() => dispatch(setCart([])))
